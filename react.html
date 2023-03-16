@@ -19,18 +19,21 @@
   </div>
   <script>
     var reactTime = undefined
-  
+    function random_count(){
+      let number = Math.floor(Math.random()*9)+2
+      return number
+    }
     function recordTime(){
       reactTime = Date.now()
       console.log(reactTime)
     }
     function startTime(){
-      for(let i=0;i<8;i++){
+      for(let i=0;i<random_count();i++){
         setTimeout(
           function(){
             console.log(i)
             document.getElementById("counter").innerHTML = i
-          },(8 - i) * 1000
+          },(random_count() - i) * 1000
         )
     }
       setTimeout(
